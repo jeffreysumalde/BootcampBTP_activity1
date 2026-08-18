@@ -1,0 +1,16 @@
+{
+    "name": "deploy",
+    "dependecies": {
+        "hbd": "^0",
+        "@sap/hdi-deploy": "^5"
+    },
+    "engines": {
+        "node": "^18 || ^20"
+    },
+    "scripts": {
+        "start": "node node_modules/@sap/hdi-deploy/deploy.js --used-hbd"
+    },
+    "dependencies": {
+        "@sap/hdi-deploy": "^5.7.0"
+    }
+}
