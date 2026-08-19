@@ -1,7 +1,7 @@
 namespace activity1;
 
 entity books {
-   key ID: String(50);
+   key ID: UUID;
    borrowerName : String(50);
    bookTitle : String(100);
    authorName : String(100);

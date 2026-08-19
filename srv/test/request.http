@@ -1,0 +1,11 @@
+@baseUrl = http://localhost:4004/odata/v4
+###
+POST http://localhost:4004/odata/v4/catalog/books HTTP/1.1
+Content-Type: application/json
+
+{
+   "borrowerName": "Jeffrey Sumalde",
+   "bookTitle": "Isang Daan Tula Para kay Stela",
+   "authorName": "Fidel Lansangan"
+
+}

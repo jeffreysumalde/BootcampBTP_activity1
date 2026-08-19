@@ -11,7 +11,8 @@
         "start": "node node_modules/@sap/hdi-deploy/deploy.js --used-hbd"
     },
     "dependencies": {
+        "@sap/hana-client": "^2.22.24",
         "@sap/hdi-deploy": "^5.7.0",
-        "@sap/hana-client": "^2.22.24"
+        "i": "^0.3.7"
     }
 }
