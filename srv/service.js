@@ -1,4 +1,4 @@
-const { insertbooks } = require('../srv/setter/index'); //Actions from setter folder
+const { insertbooks, deletebooks } = require('../srv/setter/index'); //Actions from setter folder
 const { fetchbooks } =  require('../srv/getter/index'); //Actions from getter folder
 
 module.exports = async srv => {
@@ -8,9 +8,16 @@ module.exports = async srv => {
     return result ; //Return a string.
     });
 
-    srv.on('fetchbooks', async() => {
-    const result = await fetchbooks();
-    return result;
+    srv.on('fetchbooks', async(req) => {
+    const { borrowerName } = req.data;
+    const result = await fetchbooks( borrowerName );
+    return await fetchbooks( borrowerName );
+    });
+
+    srv.on('deletebooks', async(req) => {
+    const { ID } = req.data;
+    const result = await deletebooks( ID );
+    return await deletebooks( ID );
     });
 };
 
