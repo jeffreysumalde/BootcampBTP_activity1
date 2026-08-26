@@ -20,5 +20,16 @@ action fetchbooks ( ID :String(50),
 action deletebooks ( ID :String(50)) returns String; 
 
 function northwind() returns String;
-                                               
+
+function getNorthwindData() returns array of {
+                    ProductID    : Integer;
+                    ProductName  : String;
+                    SupplierID   : Integer;
+                    CompanyName  : String;
+                    Address      : String;
+                    City         : String;
+                    Region       : String;
+                    CategoryName : String;
+                    Description  : String;
+    };                                            
 }

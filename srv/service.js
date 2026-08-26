@@ -118,7 +118,40 @@ module.exports = async srv => {
         } catch (error) {
             return { 'MESSAGE' : error.message || error.toString() };
         }
-    })
+    });
+
+
+    srv.on('getNorthwindData', async (req) => {
+
+    const products = await SELECT.from('Products');
+    const suppliers = await SELECT.from('Suppliers');
+    const categories = await SELECT.from('Categories');
+
+    const result = products.map(product => {
+
+        const supplier = suppliers.find(
+           s => String(s.SupplierID) === String(product.SupplierID)
+        );
+
+        const category = categories.find(
+           c => String(c.CategoryID) === String(product.CategoryID)
+        );
+
+        return {
+            ProductID: product.ProductID,
+            ProductName: product.ProductName,
+            SupplierID: product.SupplierID,
+            CompanyName: supplier?.CompanyName,
+            Address: supplier?.Address,
+            City: supplier?.City,
+            Region: supplier?.Region,
+            CategoryName: category?.CategoryName,
+            Description: category?.Description
+        };
+    });
+
+    return result;
+});
 
 };
 

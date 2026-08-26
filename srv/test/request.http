@@ -33,5 +33,6 @@ Content-Type: application/json
 ###
 GET http://localhost:4004/odata/v4/catalog/northwind HTTP/1.1
 
-
+###
+GET http://localhost:4004/odata/v4/catalog/getNorthwindData HTTP/1.1
 
