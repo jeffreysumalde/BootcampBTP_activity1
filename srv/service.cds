@@ -17,6 +17,8 @@ action fetchbooks ( ID :String(50),
                     authorName   : String(100),
                     readDate     : Date ) returns array of books; 
 
-action deletebooks ( ID :String(50)) returns String;                   
+action deletebooks ( ID :String(50)) returns String; 
+
+function northwind() returns String;
                                                
 }

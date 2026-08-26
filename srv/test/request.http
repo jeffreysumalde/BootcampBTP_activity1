@@ -29,4 +29,9 @@ Content-Type: application/json
     "ID": "4c8c0845-d0f8-4bc9-8213-3386dce52cdc"
 }
 
+//Send Request for northwind
+###
+GET http://localhost:4004/odata/v4/catalog/northwind HTTP/1.1
+
+
 

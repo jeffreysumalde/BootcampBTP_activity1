@@ -19,7 +19,7 @@ entity Suppliers {
     PostalCode : String(100);
     Country : String(100);
     Phone : String(100);
-    Fax : Integer;
+    Fax : String(50);
     HomePage : String(200);
 }
 
